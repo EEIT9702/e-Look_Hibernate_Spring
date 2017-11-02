@@ -18,7 +18,7 @@
 		request.setAttribute("ccdVOs", ccdVOs);
 		
 	} else {
-		List<CourseVO> courseVO = cdao.getAllOnlineCourse();
+		List<CourseVO> courseVO = cdao.getAllOnlineCourseNotFree();
 		request.setAttribute("courseVO", courseVO);
 	}
 %>
