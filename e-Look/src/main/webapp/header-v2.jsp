@@ -4,11 +4,6 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     <%@ page import="com.e_Look.Course.*" %>
     <%@ page import="java.util.List" %>
-<%	/*List<CourseVO> shoppingCartList= (List<CourseVO>) session.getAttribute("shoppingCartList");
-int courseCount=0;
-if(shoppingCartList != null){
-    courseCount = shoppingCartList.size();  }*/
-    %>
 <!DOCTYPE>
 <html>
 <head>
