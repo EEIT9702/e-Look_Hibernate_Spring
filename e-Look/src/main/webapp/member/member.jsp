@@ -341,7 +341,7 @@ a:HOVER {
 				</div>
         </div>
 			<!-- 會員左半邊-->
-			<div class="col-md-8 breadcrumb" style="padding-top: 50px;   ">
+			<div class="col-md-8 breadcrumb" >
 			<c:if test="${empty Submembervo}">
 				<div class="col-md-12" style="margin: 25px 0;">
 					<div class="panel panel-info">
@@ -604,6 +604,85 @@ a:HOVER {
 					</div>
 				</div>
 				</div>
+				<div class="col-md-12" style="margin: 25px 0;">
+					<div class="panel panel-primary">
+						<div class="panel-heading clickable panel-collapsed">
+							<h3 class="panel-title">募資中的課程</h3>
+							<span class="pull-right "><i
+								class="glyphicon glyphicon-plus"></i></span>
+						</div>
+						<div class="panel-body" style="display: none;">
+
+							<c:forEach var="fundcouser" items="${list7}">
+							<a style="text-decoration: none; color:black"; href="<%=request.getContextPath() %>/proposalCourse-v1.jsp?CourseID=${fundcouser.courseID}">
+							<div class=" col-md-4  col-sm-4" style="width: 211px">
+								<div class="card card-inverse">
+									<img class="card-img-top"
+										src="<%=request.getContextPath()%>/CourseImage?CourseID=${fundcouser.courseID}"
+										alt="course" id="wizardPicturePreview" title="">
+									<div class="card-block">
+										<figure class="profile">
+											<img
+												src="<%=request.getContextPath()%>/Image?MemberID=${fundcouser.memberID}"
+												class="profile-avatar" alt="">
+										</figure>
+										<div class="card-text">
+											<p id="title" class="card-title mt-3 multi_ellipsis">${fundcouser.courseName}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+							</c:forEach>
+					</a>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="col-md-12" style="margin: 25px 0;">
+					<div class="panel panel-info">
+						<div class="panel-heading clickable panel-collapsed">
+							<h3 class="panel-title">備課中的課程</h3>
+							<span class="pull-right "><i
+								class="glyphicon glyphicon-plus"></i></span>
+						</div>
+						<div class="panel-body" style="display: none;">
+						<c:forEach var="readycouser" items="${list8}">
+						<div   class=" col-md-4  col-sm-4" style="width: 211px">
+								<div class="card card-inverse">
+									<img class="card-img-top"
+										src="<%=request.getContextPath()%>/CourseImage?CourseID=${readycouser.courseID}"
+										alt="course" id="wizardPicturePreview" title="">
+									<div class="card-block">
+										<figure class="profile">
+											<img
+												src="<%=request.getContextPath()%>/Image?MemberID=${readycouser.memberID}"
+												class="profile-avatar" alt="">
+										</figure>
+										<div class="card-text">
+											<p id="title" class="card-title mt-3 multi_ellipsis">${readycouser.courseName}</p>
+										</div>
+									</div>
+									
+									<div class="card-footer">
+									
+										<a style="text-decoration: none; color:black"; href="<%=request.getContextPath() %>/CreateCourse.jsp?CourseID=${readycouser.courseID}"><button class="btn-info btn-sm "
+											style="margin-bottom: 5px; margin-top: 10px">編輯</button></a>
+									</div>
+								</div>						
+						</div>
+						</c:forEach>
+					</div>
+				</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				
 				<div class="col-md-12" style="margin: 25px 0;">
 					<div class="panel panel-primary">
 						<div class="panel-heading clickable panel-collapsed">
