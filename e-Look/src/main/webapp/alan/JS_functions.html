@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv=" refresh" content=" 8">
+<title>JavaScript功能參考</title>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",function(){
+	//alert("test");
+	showAdPic();
+	nowTime();
+})
+document.addEventListener("DOMContentLoaded",function(){
+	//alert("test2");
+	
+})
+	/*為文件的滑鼠按下事件定義回呼*/
+	document.onmousedown = function(event) {
+		//滑鼠事件：0 > 沒按鍵, 1 > 按左鍵, 2 > 按右鍵, 3 > 按左鍵&右鍵
+		//4 > 按中間鍵, 5 > 按左鍵&中間鍵, 6 > 按右鍵&中間鍵, 7 > 按所有鍵
+		if (event.button == 2) {
+			//提示使用者禁用滑鼠右鍵
+			alert("禁用滑鼠右鍵!");
+		}	
+	}
+	
+	/*更新網頁的函數*/
+/*	function fresh() {
+		//呼叫location的reload函數
+		window.location.reload();
+	}
+	setTimeout("fresh()",5000);
+*/
+
+	/*關閉視窗*/
+	function closeWin () {
+	//呼叫window物件的close()函數,關閉視窗
+	window.close();
+}
+
+	/*許多秒後不詢問自動關閉視窗*/
+	//定義一個是否關閉的全域變數
+/*	var willClose = true;
+	//點擊網頁
+	function clickBody () {
+		//典籍網頁後,則把變數置為false
+		willClose = false;
+	}
+	setInterval (function() {
+		//判斷是否需要關閉
+		if(willClose) {
+			//關閉視窗
+			window.close();
+		} else {
+			//如果點擊過,重新開始計算
+			willClose = true;
+		}
+	},5000);
+*/
+
+	/*展示廣告圖片*/
+	function showAdPic () {
+	//獲得廣告的DOM
+	var ad = document.getElementById("ad");
+	//直接在DOM中增加HTML原始程式來增加一個圖片的DOM
+	ad.innerHTML = '<img src="img/xmas video sale.jpg" width="900" high="600" />';
+	//設定計時器,5秒以後關閉廣告圖片
+	setTimeout (function(){
+		var ad = document.getElementById("ad");
+		//隱藏圖片
+		ad.style.display = "none";
+		},3000)
+	}
+	//window.onload = showAdPic;
+	
+	/*Enter鍵自動傳送表單*/
+	//當使用者按下鍵時
+	function formKeyPress (event) {
+		//判斷是否按的是Enter鍵
+		if(event.keyCode == 13) {
+			//傳送表單同時就把按鈕設為disabled,造成不可使用來避免重複傳送資料
+			document.getElementById("myBtn").disabled = true;
+			//傳送表單
+			document.foem[0].submit();
+		} else {
+			//傳回
+			return false;
+		}
+	}
+	
+	/*顯示現在時間*/
+	function nowTime() {
+		setInterval (function() {
+			//獲得目前時間
+			var date = new Date();
+			//把時間的字元形式展現在網頁上
+			document.getElementById("nowTime").innerHTML = date;
+		},1000);
+	}
+	//window.onload = nowTime;
+	
+</script>
+</head>
+<body style="text-align:center" onclick="clickBody()">
+
+	<div style="text-align:center">
+		<form action="" method="post" 
+		style="display:block; width:350px; height:130px; border:1px solid black;">
+		<br/>
+		使用者名稱:<input type="text" name="username" /><br/><br/>
+		密碼:<input typr="password" name="password" onkeypress="formKeyPress();"/><br/><br/>
+		<input type="submit" value="傳送" id="myBtn" /><br/>
+		</form>
+	</div>
+
+	<div style="text-align:center">
+		<!-- 需搭配onclick="clickBody()"使用 -->
+		<h2>若使用者10秒鐘不點擊網頁,本視窗將自動關閉</h2>
+	</div>
+
+	<span id="ad"></span>
+	
+	<div style="text-align:center">
+		<h2>來複製我壓~~~~</h2>
+	</div>
+	
+	<div style="text-align:center">
+		<span id="nowTime"></span>
+	</div>
+	
+	<div style="text-align:center">
+		<p>網頁每5秒都會自動更新喔~~~</p>
+	</div>
+	
+<!-- 點擊按鈕呼叫關閉視窗  -->
+	<div style="text-align:center">
+		<input type="button" value="關閉視窗" onclick="closeWin()" />
+	</div>
+
+</body>
+</html>
