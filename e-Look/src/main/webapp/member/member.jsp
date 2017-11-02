@@ -667,7 +667,8 @@ a:HOVER {
 									
 									<div class="card-footer">
 									
-										<a style="text-decoration: none; color:black"; href="<%=request.getContextPath() %>/CreateCourse.jsp?CourseID=${readycouser.courseID}"><button class="btn-info btn-sm "
+										<a style="text-decoration: none; color:black"; href="<%=request.getContextPath() %>/CreateCourse.jsp?CourseID=${readycouser.courseID}">
+										<button class="btn-info btn-sm center-block"
 											style="margin-bottom: 5px; margin-top: 10px">編輯</button></a>
 									</div>
 								</div>						
