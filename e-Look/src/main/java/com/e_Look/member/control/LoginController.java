@@ -76,9 +76,7 @@ public class LoginController extends HttpServlet {
 			}
 			session.setAttribute("LoginOK", memberVO);
 			
-			ShoppingCartDAO dao = new ShoppingCartDAO();
-			List<CourseVO> shoppingCartList =dao.findByMemberID(memberVO.getMemberID());
-			session.setAttribute("shoppingCartList", shoppingCartList);
+
 			
 			response.sendRedirect(request.getHeader("referer"));
 			//System.out.println("5");
@@ -106,9 +104,7 @@ public class LoginController extends HttpServlet {
 		}
 		session.setAttribute("LoginOK", memberVO);
 		
-		ShoppingCartDAO dao = new ShoppingCartDAO();
-		List<CourseVO> shoppingCartList =dao.findByMemberID(memberVO.getMemberID());
-		session.setAttribute("shoppingCartList", shoppingCartList);
+
 		
 
 	}
