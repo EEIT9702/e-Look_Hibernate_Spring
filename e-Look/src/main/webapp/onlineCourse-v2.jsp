@@ -2,7 +2,8 @@ f<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
 	import="java.util.*,java.text.*,com.e_Look.Course.*,com.e_Look.member.model.*,com.e_Look.buyCourse.model.*,javax.servlet.http.HttpSession"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE >
+
+<!DOCTYPE > 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
