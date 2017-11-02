@@ -1703,7 +1703,7 @@
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #ffffff !important;
+			color: #ffffff;
 		}
 
 		a.special:not(.button) {
@@ -3866,3 +3866,5 @@ span{color: #ffffff;}
 		}
 
 	}
+	
+	

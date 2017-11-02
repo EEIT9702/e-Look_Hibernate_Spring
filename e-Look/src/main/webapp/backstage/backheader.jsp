@@ -5,6 +5,10 @@
 <head>
 <style>
 nav{z-index: 10;}
+.a1 a:HOVER { 
+ color:black; 
+ } 
+
 </style>
 		<title>Generic - Solid State by HTML5 UP</title>
 		<meta charset="utf-8" />
