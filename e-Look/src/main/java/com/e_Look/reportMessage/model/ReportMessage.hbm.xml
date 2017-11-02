@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="com.e_Look.reportMessage.model.ReportMessageVO" table="ReportMessage">
+		<id name="reportID" column="reportID">
+			<generator class="identity"/>
+		</id>
+		
+		<property name="reportMessageID" column="reportMessageID" />
+		<property name="reportMemberID" column="reportMemberID" />
+		<property name="reportContent" column="reportContent" />
+		<property name="reportTime" column="reportTime" />
+		<property name="status" column="status" />
+		
+	</class>
+</hibernate-mapping>

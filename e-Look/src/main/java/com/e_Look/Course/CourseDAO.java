@@ -644,7 +644,7 @@ public class CourseDAO implements CourseDAO_interface {
 	
 	//顯示所有status2的付費課程
 	@Override
-	public List<CourseVO> getAllOnlineCourse() {
+	public List<CourseVO> getAllOnlineCourseNotFree() {
 		List<CourseVO> CourseList = new LinkedList<CourseVO>();
 		Connection con = null;
 		PreparedStatement pstmt = null;

@@ -40,19 +40,19 @@ public class ReportCourseControl extends HttpServlet {
 		
 		/***************************1.接收請求參數****************************************/
 		int status = new Integer(request.getParameter("status"));
-		System.out.println("status = " + status);
+		//System.out.println("status = " + status);
 		Integer reportID = null;
 		/***************************2.開始查詢資料*****************************************/
 		//獲得點擊"下架影片"或"不處理"所傳來的對應reportID
 		String reportIDSTR = request.getParameter("reportIDx");
 		if(status == 6){
-			System.out.println("status == 6");
+			//System.out.println("status == 6");
 			if(reportIDSTR != null){
-				System.out.println("reportIDSTR = " + reportIDSTR);
+				//System.out.println("reportIDSTR = " + reportIDSTR);
 				reportID = Integer.parseInt(reportIDSTR);
 				//使用Service並傳入對應的reportID以及對 Course欄位所做出的判斷status
 				ReportCourseService rcServ = new ReportCourseService();
-				System.out.println(reportID+"*****"+status);
+				//System.out.println(reportID+"*****"+status);
 				rcServ.discontinuedCourse(reportID, status);
 			}
 		}else if(status == 2){

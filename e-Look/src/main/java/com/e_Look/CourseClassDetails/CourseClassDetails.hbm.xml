@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.e_Look.CourseClassDetails.CourseClassDetailsVO" table="CourseClassDetails">
+	
+		<composite-id>
+			<key-property name="courseID" column="courseID" />
+			<key-property name="CourseClassID" column="CourseClassID" />
+		</composite-id>
+			<property name="courseName" column="courseName" />
+			<property name="ccName" column="ccName" />
+					
+	</class>
+</hibernate-mapping>
