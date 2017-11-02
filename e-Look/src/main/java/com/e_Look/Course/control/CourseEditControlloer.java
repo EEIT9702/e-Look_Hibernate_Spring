@@ -47,11 +47,10 @@ public class CourseEditControlloer extends HttpServlet {
 			 List<CourseVO> AllFundCourse=courseService.getAllFundRaiseCourse();
 			 //第一種取值的方式
 			 for(int i=0;i<AllFundCourse.size();i++){
-				System.out.println("募資起始時間："+AllFundCourse.get(i).getFundEndDate());
+				//System.out.println("募資起始時間："+AllFundCourse.get(i).getFundEndDate());
 				 long FundEndTime=AllFundCourse.get(i).getFundEndDate().getTime();
 				 long currentDate = System.currentTimeMillis();
-				if(FundEndTime<=currentDate){
-					
+				if(FundEndTime<=currentDate){				
 					if(BuyCourseService.getBuyCourseNumber(AllFundCourse.get(i).getCourseID())>=AllFundCourse.get(i).getTargetStudentNumber()){
 						CourseVO  courseVO =  new CourseVO();
 						courseVO.setStatus(4);
@@ -66,7 +65,7 @@ public class CourseEditControlloer extends HttpServlet {
 						//System.out.println("課程募資時間已到，募資失敗的狀態");
 					}
 				}else{
-					System.out.println("募資尚未結束，不做任何動作");
+					//System.out.println("募資尚未結束，不做任何動作");
 				}
 				}
 			 //第二種取值的方式
