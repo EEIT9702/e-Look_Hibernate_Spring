@@ -1,0 +1,136 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bootstrap 实例 - 模态框（Modal）插件</title>
+<link rel="stylesheet"	href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<script type="text/javascript">
+	/*閱讀完協定以後才可以點擊的註冊按鈕*/
+	//div的捲軸捲動事件
+	function doScroll () {
+		//取得會員規範和按鈕的DOM
+		
+		var d = document.getElementById("rule");
+		var btn = document.getElementById("btn");
+		//判斷是否捲動到最底部
+		if(d.scrollTop + d.offsetHeight >= d.scrollHeight) {
+			//恢復按鈕可用
+			btn.disabled = false;
+			//測試效果用,沒到底不可點擊
+		} else {
+			btn.disabled = true;
+		}	
+// 		alert(d.scrollTop);
+// 		alert(d.offsetHeight);
+// 		alert(d.scrollHeight);
+	}
+	//為文件的滑鼠按下事件定義回呼
+	document.onmousedown = function(event) {
+		//滑鼠事件：0 > 沒按鍵, 1 > 按左鍵, 2 > 按右鍵, 3 > 按左鍵&右鍵
+		//4 > 按中間鍵, 5 > 按左鍵&中間鍵, 6 > 按右鍵&中間鍵, 7 > 按所有鍵
+		if (event.button == 2) {
+			//提示使用者禁用滑鼠右鍵
+			alert("禁用滑鼠右鍵!");
+		}	
+	}
+	
+</script>
+<style>
+#regulation{
+	font-family: Microsoft JhengHei;
+	font-weight: bold; 
+	width:100%;
+	height:400px;
+	background-color:#F0F0F0;
+}
+#rule{
+background-color:#FFFFFF;
+width:100%;
+height:100%;
+overflow-y:scroll;
+}
+#btn 
+{
+border-radius:10px;
+font-size:15px;
+text-align:center;
+} 
+#btn2{
+border-radius:10px;
+font-size:15px;
+text-align:center;
+
+} 
+#regulation b{
+color:#0080FF;
+}
+#butfooter{
+width:20%;
+margin:2px auto;
+}
+</style>	
+	
+</head>
+<body>
+
+	<button class="btn btn-primary btn-lg" data-toggle="modal"
+		data-target="#myModal">註冊</button>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog"  style="width:1000px">
+			<div class="modal-content" >
+<!-- 			右上角X -->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+				</div>
+<!-- 				內容開始 -->
+					<div id="regulation">
+						<div onscroll="doScroll()" id="rule">
+							<h4 style="text-align: center; font-size: 20px;">e-Look
+								網站服務條款</h4>
+							<p style="font-size: 15px; text-align: left;">
+								以下文章詳述在&nbsp;e-Look&nbsp;提供您服務的同時，您必須瞭解的相關事項，請您在同意註冊成為會員前，詳細閱讀，
+								尤其當您在線上點選「同意」鍵，表示：<br /> 1.您了解本網站為本公司所經營之網站； <br />
+								2.當您於本網站註冊成為會員後，即可使用本網站提供之服務； <br />
+								3.當您使用本網站服務時，即表示您同意並遵守本網站之會員規範及相關之法律規定。<br />
+								<br /> <b>⊙遵守會員規範及法律規定</b> <br />
+								您了解您於註冊後，即成為本網站會員，可使用本網站提供的服務。當會員使用本網站服務時，
+								即表示同意接受會員規範及所有注意事項之拘束，並承諾遵守中華民國相關法規及一切國際網際網路規定與慣例。<br />
+								會員應遵守之法律規定，請參考中華民國刑法各章規定、電腦處理個人資料保護法、專利法、著作權法、商標法、
+								智慧財產權相關法規、消費者保護法、公平交易法、兒童及少年性交易防制條例、性侵害犯罪防治法、藥事法、
+								野生動物保育法、毒品危害防治條例及槍砲彈藥刀械管制條例等相關法律規定。(相關法律條文)<br />
+								<br /> <b>⊙會員資料 </b><br />
+								基於本網站所提供之各項服務，您同意於註冊時提供完整詳實且符合真實之個人資料，您所登錄之資料事後有變更時，
+								應隨時於線上更新之，如有任何虛假或冒用他人名義登錄，應自負法律責任。<br />
+								您提供之個人資料若有填寫不實，或原所登錄之資料已不符合真實而未更新， 本公司有權隨時終止您會員資格及使用各項服務之權利。<br />
+								如果您提供之個人資料經本公司判斷有違服務之宗旨，本公司有權隨時終止您會員資格及使用各項服務之權利。 <br />
+								<br /> <b>⊙會員規範的增訂、修改與終止</b> <br />
+								&nbsp;e-Look&nbsp;保留隨時修改本會員規範之權利，修改後的規範將於網站首頁最新消息區公告，將不另作會員個別通知。
+								如果您不同意修正內容，應停止繼續使用本公司服務。倘若您繼續使用本網站提供之服務， 則表示您同意並接受本會員規範之任何修改。<br />
+								<br /> <b>⊙服務之更改與停止</b><br />
+								&nbsp;e-Look&nbsp;保留隨時更改或停止各項服務內容，或終止任一會員帳戶服務之權利，且無需事先通知會員。
+								無論任何情形，就停止或更改服務或終止會員帳戶服務之決定，本網站對任何會員或第三人均不負任何責任。<br />
+								<br /> 您瞭解&nbsp;e-Look&nbsp;提供網站上的服務與資訊供會員使用，但不對任何服務或資訊傳送的遲延、
+								儲存的故障以及任何資訊的刪除負任何責任。<br />
+							</p>
+						</div>
+				</div>
+<!-- 				內容結束 -->
+				<div  id="butfooter">
+					<button type="button" class="btn btn-primary" id="btn" disabled="disabled">同意</button>
+					<button type="button" class="btn btn-primary" id="btn2">不同意</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

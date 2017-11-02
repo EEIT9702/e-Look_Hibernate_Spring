@@ -1,0 +1,22 @@
+﻿/**************非正式的假資料==>> 也就是很醜的假資料**************/
+/**************僅限資料庫還沒有正式的假資料時使用**************/
+/**************使用前請先註冊第一筆會員、新增第一筆課程資料*******/
+USE eLook
+
+INSERT INTO Message (mContent,mTime,memberID,courseID,bought,status) VALUES ('測試留言1',getDate(),100001,200001,120,0)
+INSERT INTO Message (mContent,mTime,memberID,courseID,bought,status) VALUES ('測試留言2',getDate(),100001,200001,125,0)
+INSERT INTO Message (mContent,mTime,memberID,courseID,bought,status) VALUES ('測試留言3',getDate(),100001,200001,130,0)
+INSERT INTO Message (mContent,mTime,memberID,courseID,bought,status) VALUES ('測試留言4',getDate(),100001,200001,135,0)
+INSERT INTO Message (mContent,mTime,memberID,courseID,bought,status) VALUES ('測試留言5',getDate(),100001,200001,140,0)
+INSERT INTO Message (mContent,mTime,memberID,courseID,bought,status) VALUES ('測試留言6',getDate(),100001,200001,145,0)
+
+INSERT INTO ReportMessage (reportMessageID,reportMemberID,reportContent,reportTime,status) VALUES (1001,100001,'測試檢舉1',getDate(),0)
+INSERT INTO ReportMessage (reportMessageID,reportMemberID,reportContent,reportTime,status) VALUES (1002,100001,'測試檢舉2',getDate(),0)
+INSERT INTO ReportMessage (reportMessageID,reportMemberID,reportContent,reportTime,status) VALUES (1003,100001,'測試檢舉3',getDate(),0)
+INSERT INTO ReportMessage (reportMessageID,reportMemberID,reportContent,reportTime,status) VALUES (1004,100001,'測試檢舉4',getDate(),0)
+INSERT INTO ReportMessage (reportMessageID,reportMemberID,reportContent,reportTime,status) VALUES (1005,100001,'測試檢舉5',getDate(),0)
+INSERT INTO ReportMessage (reportMessageID,reportMemberID,reportContent,reportTime,status) VALUES (1006,100001,'測試檢舉6',getDate(),0)
+INSERT INTO ReportMessage (reportMessageID,reportMemberID,reportContent,reportTime,status) VALUES (1001,100001,'測試檢舉7',getDate(),0)
+INSERT INTO ReportMessage (reportMessageID,reportMemberID,reportContent,reportTime,status) VALUES (1002,100001,'測試檢舉8',getDate(),0)
+INSERT INTO ReportMessage (reportMessageID,reportMemberID,reportContent,reportTime,status) VALUES (1003,100001,'測試檢舉9',getDate(),0)
+INSERT INTO ReportMessage (reportMessageID,reportMemberID,reportContent,reportTime,status) VALUES (1004,100001,'測試檢舉10',getDate(),0)
