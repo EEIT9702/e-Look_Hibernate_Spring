@@ -83,12 +83,18 @@ public class CourseService {
 	public void changeStatustoFundStatus(Integer courseID){
 		dao.changeStatustoFund(courseID);
 	}
+	public void updateStatus(CourseVO courseVO){
+		dao.updateStatus(courseVO);
+	}
 	public List<CourseVO> getAllCourseData(Integer memberID, Integer status){
 		return dao.findAllCourse(memberID, status);
 	}
 
 	public List<CourseVO> getAllReviewCourseData(){
 		return dao.getAllReviewCourse();
+	}
+	public List<CourseVO> getAllFundRaiseCourse(){
+		return dao.getAllFundRaiseCourse();
 	}
 	
 
