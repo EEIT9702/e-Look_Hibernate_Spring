@@ -63,7 +63,7 @@ small, .small {
 					</a>
 				</div>
 				<div>
-					<p style="margin-top: 40px; font-size: 18px">課程售價：${freeCourse.courseVO.soldPrice}</p>
+					<p style="margin-top: 40px; font-size: 18px">課程售價：<b style="color:red;">免費</b></p>
 				</div>
 			</div>
 			<div class="card-footer">
@@ -92,7 +92,7 @@ small, .small {
 					</a>
 				</div>
 				<div>
-					<p style="margin-top: 40px; font-size: 18px">課程售價：${courseVO.soldPrice}</p>
+					<p style="margin-top: 40px; font-size: 18px">課程售價：<b style="color:red;">免費</b></p>
 				</div>
 			</div>
 			<div class="card-footer">
