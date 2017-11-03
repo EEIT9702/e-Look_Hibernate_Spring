@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-4.0.dtd">
 
 <hibernate-mapping>
-<class name="com.e_Look.Course.CourseVO" table="course2">
+<class name="com.e_Look.Course.CourseVO" table="course">
 	<id name="courseID" column="courseID">
 		<generator class="identity"/>
 	</id>
