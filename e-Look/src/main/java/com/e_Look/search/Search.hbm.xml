@@ -2,10 +2,12 @@
 <!-- Generated 2017/10/14 上午 11:18:21 by Hibernate Tools 5.2.3.Final -->
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-
 <hibernate-mapping>
-    <class name="com.e_Look.backStage.login.model.ManagerVO" table="Manager" >
-        <id name="managerID" column="managerID" />
-        <property name="mPassword" column="mPassword" />
-    </class>
+	<class name="com.e_Look.search.SearchVO" table="Search">
+			<id name="searchID" column="searchID">
+				<generator class="identity"/>
+			</id>
+			<property name="enterTime" column="enterTime"/>
+			<property name="keyWord" column="keyWord"/>
+	</class>
 </hibernate-mapping>

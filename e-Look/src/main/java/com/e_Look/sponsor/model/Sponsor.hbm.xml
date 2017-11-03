@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated 2017/10/14 上午 11:18:21 by Hibernate Tools 5.2.3.Final -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.e_Look.sponsor.model.SponsorVO" table="Sponsor">
+		<id name="sponsorNO" column="sponsorNO">
+			<generator class="identity"></generator>
+		</id>
+		<property name="courseID" column="courseID"/>
+		<property name="SponsorName" column="SponsorName"/>
+		<property name="money" column="money"/>
+		<property name="dateSponsor" column="dateSponsor"/>		
+	</class>
+</hibernate-mapping>

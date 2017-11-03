@@ -10,13 +10,17 @@ public class SponsorVO implements Serializable {
 	private String SponsorName;
 	private Integer money;
 	private Date dateSponsor;
+	private Integer sponsorNO;
 	public SponsorVO() {};
 	
-	public SponsorVO(Integer courseID, String SponsorName, Integer money,Date dateSponsor) {
+	
+
+	public SponsorVO(Integer courseID, String SponsorName, Integer money,Date dateSponsor,Integer sponsorNO) {
 		this.courseID = courseID;
 		this.SponsorName = SponsorName;
 		this.money = money;
 		this.dateSponsor=dateSponsor;
+		this.sponsorNO=sponsorNO;
 	}
 	
 	public Integer getCourseID() {
@@ -50,5 +54,11 @@ public class SponsorVO implements Serializable {
 	public void setDateSponsor(Date dateSponsor) {
 		this.dateSponsor = dateSponsor;
 	}
+	public Integer getSponsorNO() {
+		return sponsorNO;
+	}
 
+	public void setSponsorNO(Integer sponsorNO) {
+		this.sponsorNO = sponsorNO;
+	}
 }
