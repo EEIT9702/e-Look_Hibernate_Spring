@@ -7,24 +7,24 @@ import com.e_Look.eLookEvent.eLookEventVO;
 public class CourseClassVO  implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
-	private Integer CourseClassID;
+	private Integer courseClassID;
 	private String ccName;
-	//private Integer eventID;
 	private eLookEventVO eventVO;
+	
 	public CourseClassVO(){}
-	public CourseClassVO(Integer CourseClassID, String ccName, eLookEventVO eventVO) {
-		this.CourseClassID = CourseClassID;
+	public CourseClassVO(Integer courseClassID, String ccName, eLookEventVO eventVO) {
+		this.courseClassID = courseClassID;
 		this.ccName = ccName;
 		this.eventVO = eventVO;
 		
 	}
 	
 	public Integer getCourseClassID() {
-		return CourseClassID;
+		return courseClassID;
 	}
 	
 	public void setCourseClassID(Integer courseClassID) {
-		CourseClassID = courseClassID;
+		this.courseClassID = courseClassID;
 	}
 	
 	public String getCcName() {

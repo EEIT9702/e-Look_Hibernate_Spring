@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 
 import com.e_Look.ad.AdVO;
 
-public class LoginDAO implements Login_interface{
+public class ManagerDAO implements ManagerDAO_interface{
 	private static DataSource ds = null;
 	static {
 		try {
@@ -29,8 +29,8 @@ public class LoginDAO implements Login_interface{
 
 
 @Override
-public LoginVO findByManagerID(String managerID) {
-	LoginVO loginVO = null;
+public ManagerVO findByManagerID(String managerID) {
+	ManagerVO loginVO = null;
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	
@@ -43,7 +43,7 @@ public LoginVO findByManagerID(String managerID) {
 
 		while (rs.next()) {
 			// adVO 也稱為 Domain objects
-			loginVO = new LoginVO();
+			loginVO = new ManagerVO();
 			loginVO.setManagerID(rs.getString("managerID"));
 			loginVO.setmPassword(rs.getString("mPassword"));
 			

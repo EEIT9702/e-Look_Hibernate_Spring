@@ -29,11 +29,11 @@ public class CourseClassDAO implements CourseClass_interface{
 	}
 
 	private static final String INSERT_COURSE_CLASS = "INSERT INTO courseClass (ccName) VALUES (?)"; 
-	private static final String UPDATE_COURSE_CLASS = "UPDATE courseClass SET ccName=? eventID=? WHERE CourseClassID=?"; 
-	private static final String DELETE_COURSE_CLASS = "DELETE FROM courseClass WHERE CourseClassID=?"; 
-	private static final String SELECT_COURSE_CLASS = "SELECT CourseClassID,ccName,eventID FROM courseClass WHERE CourseClassID=?";
-	private static final String SELECT_EVENT_COURSE_CLASS = "SELECT CourseClassID,ccName,eventID FROM courseClass WHERE eventID=?";
-	private static final String SELECT_ALL_COURSE_CLASS = "SELECT CourseClassID,ccName,eventID FROM courseClass";
+	private static final String UPDATE_COURSE_CLASS = "UPDATE courseClass SET ccName=? eventID=? WHERE courseClassID=?"; 
+	private static final String DELETE_COURSE_CLASS = "DELETE FROM courseClass WHERE courseClassID=?"; 
+	private static final String SELECT_COURSE_CLASS = "SELECT courseClassID,ccName,eventID FROM courseClass WHERE courseClassID=?";
+	private static final String SELECT_EVENT_COURSE_CLASS = "SELECT courseClassID,ccName,eventID FROM courseClass WHERE eventID=?";
+	private static final String SELECT_ALL_COURSE_CLASS = "SELECT courseClassID,ccName,eventID FROM courseClass";
 	@Override
 	public void insert(CourseClassVO courseClassVO) {
 		Connection con = null;

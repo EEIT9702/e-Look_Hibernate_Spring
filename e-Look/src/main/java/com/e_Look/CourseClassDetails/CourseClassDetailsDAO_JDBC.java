@@ -26,7 +26,7 @@ public class CourseClassDetailsDAO_JDBC implements CourseClassDetails_interface 
 	// String passwd = "123456";
 	
 	private static final String INSERT_COURSE_N_CLASS = 
-			"INSERT INTO CourseClassDetails (courseID,courseName,CourseClassID,ccName) VALUES (?,?,?,?)";
+			"INSERT INTO CourseClassDetails (courseID,courseName,courseClassID,ccName) VALUES (?,?,?,?)";
 	
 //	private static final String UPDATE_courseNClass = 
 //			"update CourseClassDetails set CourseClassID=? where courseID=?";
@@ -35,13 +35,13 @@ public class CourseClassDetailsDAO_JDBC implements CourseClassDetails_interface 
 			"DELETE FROM CourseClassDetails WHERE courseID=?";
 	
 	private static final String SELECT_BY_COURSE_CLASSID = 
-			"SELECT CourseClassID,ccName,courseID,courseName FROM CourseClassDetails WHERE CourseClassID=?";
+			"SELECT courseClassID,ccName,courseID,courseName FROM CourseClassDetails WHERE courseClassID=?";
 	
 	private static final String SELECT_BY_COURSEID = 
-			"SELECT courseID,courseName,CourseClassID,ccName FROM CourseClassDetails WHERE courseID=?";
+			"SELECT courseID,courseName,courseClassID,ccName FROM CourseClassDetails WHERE courseID=?";
 	
 	private static final String SELECT_ALL = 
-			"SELECT CourseClassID,ccName,courseID,courseName FROM CourseClassDetails";
+			"SELECT courseClassID,ccName,courseID,courseName FROM CourseClassDetails";
 
 	@Override
 	public void insert(CourseVO courseVO, CourseClassVO courseClassVO) {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017/10/14 上午 11:18:21 by Hibernate Tools 5.2.3.Final -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+    <class name="com.e_Look.CourseClassDetails.CourseClassDetailsVO" table="CourseClassDetails" >
+        
+        <composite-id>
+           <key-many-to-one name="courseVO" class="com.e_Look.Course.CourseVO" lazy="false">
+           		<column name="courseID"/>
+           </key-many-to-one>
+           <key-many-to-one name="courseClassVO" class="com.e_Look.courseClass.CourseClassVO" lazy="false">
+           		<column name="courseClassID"/>           
+           </key-many-to-one>
+        </composite-id>
+            <property name="ccName" column="ccName" />
+            <property name="courseName" column="courseName" />
+    </class>
+</hibernate-mapping>

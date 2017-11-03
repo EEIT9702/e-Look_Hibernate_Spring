@@ -24,8 +24,8 @@ public class LoginControler extends HttpServlet {
 		String managerID = req.getParameter("managerID");
 		String password = req.getParameter("mPassword");
 		//String login = req.getParameter("action");
-		LoginService service = new LoginService();
-		LoginVO loginVO = null;
+		ManagerService service = new ManagerService();
+		ManagerVO loginVO = null;
 		Map<String, String> errorMsgs = new HashMap<String, String>();
 		req.setAttribute("ErrMsg", errorMsgs);
 

@@ -2,77 +2,59 @@ package com.e_Look.message.model;
 
 import java.util.List;
 
+import com.e_Look.member.model.MemberDAO_interface;
+import com.e_Look.member.model.MemberVO;
+
 public class MessageService {
 	private MessageDAO_interface dao;    //多型多
-
+	private MemberDAO_interface memberDAO;
 	public MessageService() {
 		dao = new MessageDAO();
 	}
 
-	public MessageVO addMessage(String mContent,Integer memberID,Integer courseID, Long bought, Byte status)
+	public void addMessage(String mContent,Integer memberID,Integer courseID, Byte status)
 	   {
-
+		MemberVO memberVO = memberDAO.findByPrimaryKey(memberID);
+		
 		MessageVO messageVO = new MessageVO();
-
 		messageVO.setmContent(mContent);
         //mTime時間由dao產生
-		messageVO.setMemberID(memberID);
+		messageVO.setMemberVO(memberVO);
 		messageVO.setCourseID(courseID);
-		messageVO.setBought(bought);
 		messageVO.setStatus(status);
 		dao.insert(messageVO);
-
-		return messageVO;
 	}
 	
-	public MessageVO addReMessage(String mContent,Integer messageID_response,Integer memberID,Integer courseID, Long bought, Byte status)
+	public void addResponse(String mContent,Integer messageID_response,Integer memberID,Integer courseID, Byte status)
 	   {
-
+		MemberVO memberVO = memberDAO.findByPrimaryKey(memberID);
 		MessageVO messageVO = new MessageVO();
-
 		messageVO.setmContent(mContent);
 		messageVO.setMessageID_response(messageID_response);
-		messageVO.setMemberID(memberID);
+		messageVO.setMemberVO(memberVO);
 		messageVO.setCourseID(courseID);
-		messageVO.setBought(bought);
 		messageVO.setStatus(status);
 		dao.insert(messageVO);
-
-		return messageVO;
 	}
-
 		
-	public MessageVO updateMessage(Integer messageID,String mContent, Integer memberID,Integer courseID, Long bought, Byte status,String update) {
+	public void updateMessage(Integer messageID,String mContent, String update) {
 
 		MessageVO messageVO = new MessageVO();
-
+		messageVO.setMessageID(messageID);
 		messageVO.setmContent(mContent);
-//		messageVO.setmTime(mTime);
-//		messageVO.setMessageID_response(messageID_response);
-		messageVO.setMemberID(memberID);
-		messageVO.setCourseID(courseID);
-		messageVO.setBought(bought);
-		messageVO.setStatus(status);
 		dao.update(messageVO,update);
-
-		return dao.findByPrimaryKey(messageID);
+//		return dao.findByPrimaryKey(messageID);
 	}
+	public List<MessageVO> findCourseRe(Integer courseID){
+		return dao.findMessageByCourseID(courseID);
+	} 
 	
-	
-
-	public void deleteMessage(Integer messageID) {
-		dao.delete(messageID);
-	}
-
 	public MessageVO getOneMessage(Integer messageID) {
 		return dao.findByPrimaryKey(messageID);
 	}
-	public List<MessageVO> getOneMessageM(Integer courseID) {
-		return dao.findByPrimaryKeyM(courseID);
-	}
 
-	public List<MessageVO> getAll() {
-		return dao.getAll();
+	public List<MessageVO> findAllResponse(Integer messageID_response) {
+		return dao.findAllResponse(messageID_response);
 	}
 
 	

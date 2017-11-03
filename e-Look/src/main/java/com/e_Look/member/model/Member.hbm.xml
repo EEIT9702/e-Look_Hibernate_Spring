@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017/10/14 上午 11:18:21 by Hibernate Tools 5.2.3.Final -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+    <class name="com.e_Look.member.model.MemberVO" table="Member" >
+        
+        
+        <id name="memberID" column="memberID">
+        	<generator class="identity"/>
+        </id>
+            <property name="email" column="email" />
+            <property name="mPassword" column="mPassword" />
+            <property name="mName" column="mName" />
+            <property name="mPhoto" column="mPhoto" />
+            <property name="aboutme" column="aboutme" />
+            <property name="skill" column="skill" />
+            <property name="hobby" column="hobby" />
+            <property name="registerDate" column="registerDate" />
+            <property name="status" column="status" />
+            <property name="count" column="count" />
+            <property name="address" column="address" />
+    </class>
+</hibernate-mapping>

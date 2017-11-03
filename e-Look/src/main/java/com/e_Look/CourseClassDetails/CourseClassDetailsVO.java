@@ -4,13 +4,13 @@ import java.io.Serializable;
 import com.e_Look.courseClass.CourseClassVO;
 import com.e_Look.Course.CourseVO;
 public class CourseClassDetailsVO  implements Serializable{
-	
 	private static final long serialVersionUID = 1L;
 	
-	private String courseName;
-	private String ccName;
-	private CourseClassVO courseClassVO;
 	private CourseVO courseVO;
+	private CourseClassVO courseClassVO;
+	private String ccName;
+	private String courseName;
+	
 	
 	public CourseClassDetailsVO(){}
 	public CourseClassDetailsVO( CourseVO courseVO,CourseClassVO courseClassVO){

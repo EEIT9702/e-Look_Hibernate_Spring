@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.e_Look.member.model.MemberDAO;
 import com.e_Look.member.model.MemberVO;
 import com.e_Look.message.model.MessageService;
 import com.e_Look.message.model.MessageVO;
@@ -86,14 +87,14 @@ public class MessageController extends HttpServlet {
 				MessageService service = new MessageService();
 //				MessageDAO md;
 //要再轉型   		MessageVO mb = new MessageVO(messageID, mContent, mTime, messageID_response, memberID,courseID,bought,status);
-				
+				MemberDAO mdao = new MemberDAO();
 				MessageVO messageVO1= new MessageVO();
 				messageVO1.setmContent(mContent);
 //				messageVO1.setmTime();
 //				MemberVO member=(MemberVO)session.getAttribute("LoginOK");
 //				Integer memberID = member.getMemberID();
 //				messageVO1.setMemberID(member.getMemberID());
-				messageVO1.setMemberID(100001);
+				messageVO1.setMemberVO(mdao.findByPrimaryKey(100001));
 //				messageVO1.setCourseID(200001);
 				messageVO1.setBought((long) 123);
 				messageVO1.setStatus((byte) 1);
@@ -105,9 +106,9 @@ public class MessageController extends HttpServlet {
 				Byte status= 1;
 				
 				if(messageID_response>0){
-					messageVO = service.addReMessage(mContent,messageID_response,memberID,courseID,bought,status);
-					}else{
-				    messageVO = service.addMessage(mContent,memberID,courseID,bought,status);};
+					//messageVO = service.addReMessage(mContent,messageID_response,memberID,courseID,bought,status);
+					}else{}
+				    //messageVO = service.addMessage(mContent,memberID,courseID,bought,status);};
 				
 				session.setAttribute("MessageVO", messageVO);
 				session.setAttribute("MessageInsertOK", "新增留言成功");
@@ -205,7 +206,7 @@ public class MessageController extends HttpServlet {
 				
 				/***************************2.開始刪除資料***************************************/
 				MessageService messageSvc = new MessageService();
-				messageSvc.deleteMessage(messageID);
+				//messageSvc.deleteMessage(messageID);
 				
 				/***************************3.刪除完成,準備轉交(Send the Success view)***********/								
 				
@@ -240,11 +241,11 @@ public class MessageController extends HttpServlet {
 								
 				/***************************2.開始查詢資料*****************************************/
 				MessageService messageSvc = new MessageService();
-				List<MessageVO> messageVO = messageSvc.getOneMessageM(courseID);
+				//List<MessageVO> messageVO = messageSvc.getOneMessageM(courseID);
 				
-				if (messageVO == null) {
+				/*if (messageVO == null) {
 					errorMsgs.add("查無資料");
-				}
+				}*/
 				// Send the use back to the form, if there were errors
 				if (!errorMsgs.isEmpty()) {
 					RequestDispatcher failureView = request
@@ -254,11 +255,10 @@ public class MessageController extends HttpServlet {
 				}
 				
 				/***************************3.查詢完成,準備轉交(Send the Success view)*************/
-				System.out.println(messageVO);
-				String jsonString = JSONValue.toJSONString(messageVO); 
+				//String jsonString = JSONValue.toJSONString(messageVO); 
 		
-				System.out.print(jsonString);
-				out.println(jsonString);
+			//	System.out.print(jsonString);
+				//out.println(jsonString);
 				
 //				request.setAttribute("messageVO", messageVO); // 資料庫取出的VO物件,存入request
 //				out.print(messageVO);

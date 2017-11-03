@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 import javax.print.DocFlavor.STRING;
 
-public class LoginVO implements Serializable{
+public class ManagerVO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String managerID;
 	private String mPassword;
-	public LoginVO(){}
+	public ManagerVO(){}
  
 
 
-	public LoginVO(String managerID, String mPassword) {
+	public ManagerVO(String managerID, String mPassword) {
 		super();
 		this.managerID = managerID;
 		this.mPassword = mPassword;

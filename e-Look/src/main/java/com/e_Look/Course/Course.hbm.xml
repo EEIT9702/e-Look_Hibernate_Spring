@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017/10/14 上午 11:18:21 by Hibernate Tools 5.2.3.Final -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+    <class name="com.e_Look.Course.CourseVO" table="Course" >
+        
+        
+        <id name="courseID" column="courseID">
+        	<generator class="identity"/>
+        </id>
+            <property name="courseName" column="courseName" />
+            <property name="cPhoto" column="cPhoto" />
+            <property name="preTool" column="preTool" />
+            <property name="background" column="background" />
+            <property name="ability" column="ability" />
+            <property name="targetgroup" column="targetgroup" />
+            <property name="soldPrice" column="soldPrice" />
+            <property name="courseLength" column="courseLength" />
+            <property name="targetStudentNumber" column="targetStudentNumber" />
+            <property name="fundStartDate" column="fundStartDate" />
+            <property name="fundEndDate" column="fundEndDate" />
+            <property name="courseStartDate" column="courseStartDate" />
+            <property name="courseVideopathway" column="courseVideopathway" />
+            <property name="paper" column="paper" />
+            <property name="status" column="status" />
+            <property name="courseContent" column="courseContent" />
+            <property name="memberID" column="memberID" />
+            <property name="avgScore" column="avgScore" />
+    </class>
+</hibernate-mapping>

@@ -38,13 +38,13 @@ public class CourseClassDetailsDAO implements CourseClassDetails_interface {
 			"DELETE FROM CourseClassDetails WHERE courseID=?";
 	
 	private static final String SELECT_BY_COURSE_CLASSID = 
-			"SELECT CourseClassID,ccName,courseID,courseName FROM CourseClassDetails WHERE CourseClassID=?";
+			"SELECT courseClassID,ccName,courseID,courseName FROM CourseClassDetails WHERE courseClassID=?";
 	
 	private static final String SELECT_BY_COURSEID = 
-			"SELECT courseID,courseName,CourseClassID,ccName FROM CourseClassDetails WHERE courseID=?";
+			"SELECT courseID,courseName,courseClassID,ccName FROM CourseClassDetails WHERE courseID=?";
 	
 	private static final String SELECT_ALL = 
-			"SELECT CourseClassID,ccName,courseID,courseName FROM CourseClassDetails";
+			"SELECT courseClassID,ccName,courseID,courseName FROM CourseClassDetails";
 
 	@Override
 	public void insert(CourseVO courseVO, CourseClassVO courseClassVO) {
