@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+
+<title>募資課程</title>
 <link href="<%=request.getContextPath()%>/HeaderCssJs/bootstrap.min.css"
 	rel="stylesheet">
 <link href="<%=request.getContextPath()%>/css/bootstrap.css"
@@ -19,6 +20,7 @@
 
 <script src="<%=request.getContextPath()%>/js/raphael.js"></script>
 <script src="<%=request.getContextPath()%>/js/jquery.classyled.min.js"></script>
+<link rel="Short Icon" type="image/x-icon" href="${initParam.icon}" />
 <style>
 /* 影片區塊 */
 video {

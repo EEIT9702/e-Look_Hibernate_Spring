@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>免費課程</title>
 <link href="<%=request.getContextPath()%>/HeaderCssJs/bootstrap.min.css"
 	rel="stylesheet">
@@ -25,7 +26,8 @@
 	<!-- 星星 -->
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/_Lyy/jquery.raty.min.js"></script>
-<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+<link rel="Short Icon" type="image/x-icon" href="${initParam.icon}" />
 <style>
 /* 影片區塊 */
 video {
@@ -205,7 +207,6 @@ a{text-decoration:none}
 				<h1 align="center" id="videoTitle">${courseVO.courseName}</h1>
 				<div class="col-md-12 " id="videoArea"
 					style="background-image: url('<%=request.getContextPath() %>/CourseImage?CourseID=${courseVO.courseID}')">
-
 					<div class="col-md-12">
 						<div class="col-md-8 col-xs-12" style="margin-right: -15px">
 
@@ -250,7 +251,7 @@ a{text-decoration:none}
 				<div class="col-md-1 col-xs-4">
 					<img src="<%=request.getContextPath()%>/_Lyy/004-people.png"
 						class="img-responsive center-block " >
-					<h5 class="text-center"style="font-size: 18px">課程人數</h5>
+					<h5 class="text-center"style="font-size: 18px" id="buyStudentNumber"></h5>
 				</div>
 				<!--課程時間 -->
 				<div class="col-md-1 col-xs-4">
@@ -1158,6 +1159,16 @@ a{text-decoration:none}
 			});
 		});
 	</script>
+	<script>
+	$(function(){
+		$.getJSON("/e-Look/BuyCourseNumber",{'courseID':$("#mbcourseID").val()},
+				function(data){
+					var buyStudentNumber=parseInt(data);
+					$("#buyStudentNumber").text(buyStudentNumber+"人")
+			})
+	})
+	</script>
+	
 		<script>
 		var b=true;
  		$('video').click(function(){

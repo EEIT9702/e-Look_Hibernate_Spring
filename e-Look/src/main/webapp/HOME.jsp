@@ -314,6 +314,7 @@ s
 <%-- 					<p class="fundend" style="font-size:18px;float:right;">募資截止日：<fmt:formatDate value="${fundCourse.fundEndDate}" type="date"/></p> --%>
 					<p class="fundend" style="font-size:18px;float:right;" alt="${fundCourse.fundEndDate}"></p>
 				</div>
+				<div class="card-footer" style="clear:both;"></div>
 				<div class="progress" style="clear:both;">
 					<div class="progress-bar progress-bar-warning progress-bar-striped active" 
 					role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 

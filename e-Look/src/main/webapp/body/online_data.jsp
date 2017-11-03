@@ -4,6 +4,7 @@
 <%@ page import="com.e_Look.CourseClassDetails.*" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.e_Look.Course.*" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 	String ccName = request.getParameter("courseClass");
 	CourseClassDetailsDAO ccddao = new CourseClassDetailsDAO();
@@ -17,7 +18,7 @@
 		request.setAttribute("ccdVOs", ccdVOs);
 		
 	} else {
-		List<CourseVO> courseVO = cdao.getAllOnlineCourse();
+		List<CourseVO> courseVO = cdao.getAllOnlineCourseNotFree();
 		request.setAttribute("courseVO", courseVO);
 	}
 %>
@@ -57,11 +58,17 @@ small, .small {
 				</figure>
 				<div class="card-text">
 					<a style="text-decoration: none; color: black"; href="<%=request.getContextPath() %>/onlineCourse-v2.jsp?CourseID=${onlineCourse.courseVO.courseID}">
-						<p id="title" class="card-title mt-3 multi_ellipsis">${onlineCourse.courseVO.courseName}</p>
+						<p id="title" class="card-title mt-3 multi_ellipsis">
+									<fmt:setLocale value="zh-TW" />
+						<fmt:formatNumber value="${onlineCourse.courseVO.soldPrice}" type="currency" maxFractionDigits="0"/>
+						</p>
 					</a>
 				</div>
 				<div>
-					<p style="margin-top: 40px; font-size: 18px">課程售價：${onlineCourse.courseVO.soldPrice}</p>
+					<p style="margin-top: 40px; font-size: 18px">課程售價：
+					<fmt:setLocale value="zh-TW" />
+					<fmt:formatNumber value="${onlineCourse.courseVO.soldPrice}" type="currency" maxFractionDigits="0"/>
+					</p>
 				</div>
 			</div>
 			<div class="card-footer">
@@ -90,7 +97,10 @@ small, .small {
 					</a>
 				</div>
 				<div>
-					<p style="margin-top: 40px; font-size: 18px">課程售價：${courseVO.soldPrice}</p>
+					<p style="margin-top: 40px; font-size: 18px">課程售價：
+					<fmt:setLocale value="zh-TW" />
+					<fmt:formatNumber value="${courseVO.soldPrice}" type="currency" maxFractionDigits="0"/>
+					</p>
 				</div>
 			</div>
 			<div class="card-footer">

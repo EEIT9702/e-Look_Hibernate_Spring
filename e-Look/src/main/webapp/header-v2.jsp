@@ -4,8 +4,9 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     <%@ page import="com.e_Look.Course.*" %>
     <%@ page import="java.util.List" %>
+
 <!DOCTYPE>
-<html>
+<html>  
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- <title>Insert title here</title> -->

@@ -76,6 +76,7 @@ public class LoginController extends HttpServlet {
 			}
 			session.setAttribute("LoginOK", memberVO);
 			
+
 			
 			response.sendRedirect(request.getHeader("referer"));
 			//System.out.println("5");
@@ -103,6 +104,7 @@ public class LoginController extends HttpServlet {
 		}
 		session.setAttribute("LoginOK", memberVO);
 		
+
 		
 
 	}

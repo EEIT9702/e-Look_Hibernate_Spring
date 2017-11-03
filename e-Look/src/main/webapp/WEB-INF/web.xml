@@ -52,4 +52,9 @@
     <filter-name>MemberFilter</filter-name>
     <url-pattern>/member/member.jsp</url-pattern>
   </filter-mapping>
+    <filter-mapping>
+    <filter-name>ReviewCourseFilter</filter-name>
+    <url-pattern>/ReviewingCoursePage.jsp</url-pattern>
+  </filter-mapping>
+  
 </web-app>

@@ -284,7 +284,7 @@ $(function() {
 	$('.keyword').on('click','.keywordlink',clickKeyword)
 	$('#submit').click(newsubmit);
 	$(window).scroll(river);
-	$('.text-center').click(clickClass);
+	$('.ccicon').click(clickClass);
 	$('#searchicon').click(clickSearch);
 });
 function clickKeyword(){
@@ -301,11 +301,11 @@ function newsubmit(e){
 function clickClass(){
 	if(lastClickClass==$(this).children('p').attr('alt')){
 		courseClass= "" ;
-		$('.text-center').children('img').removeClass('gray1');
+		$('.ccicon').children('img').removeClass('gray1');
 		lastClickClass="";		
 	}else{
 		courseClass=$(this).children('p').attr('alt');
-		$('.text-center').children('img').addClass('gray1');
+		$('.ccicon').children('img').addClass('gray1');
 		$(this).children('img').removeClass('gray1');
 		lastClickClass=$(this).children('p').attr('alt');
 	}
@@ -378,40 +378,40 @@ function river(){
 	<div class="row">
 	<div class="col-md-8 col-sm-10 col-xs-12 cclass">
 
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 			<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/life.svg"><p alt="101" class="pstyle">生活</p>
 		</div>
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 				<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/arts.svg"><p alt="102" class="pstyle">藝術</p>
 		</div>
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 			<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/athletics.svg"><p alt="103" class="pstyle">運動</p>
 		</div>
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 			<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/video.svg"><p alt="104" class="pstyle">影音</p>
 		</div>
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 			<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/hand-made.svg"><p alt="105" class="pstyle">手作</p>
 		</div>
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 			<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/other.svg"><p alt="106" class="pstyle">其他</p>
 		</div>
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 				<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/design.svg"><p alt="107" class="pstyle">設計</p>
 		</div>
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 				<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/science.svg"><p alt="108" class="pstyle">科技</p>
 		</div>
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 				<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/business.svg"><p alt="109" class="pstyle">商業</p>
 		</div>
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 				<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/language.svg"><p alt="110" class="pstyle">語言</p>
 		</div>
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 				<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/cooking.svg"><p alt="111" class="pstyle">烹飪</p>
 		</div>
-		<div class="col-md-1 col-sm-2 col-xs-3 text-center">
+		<div class="col-md-1 col-sm-2 col-xs-3 text-center ccicon">
 				<img class="svgIcon" src="<%=request.getContextPath() %>/alan/img/program.svg"><p alt="112" class="pstyle">程式</p>
 		</div>
 	
