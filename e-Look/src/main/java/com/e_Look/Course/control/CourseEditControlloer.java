@@ -3,6 +3,8 @@ package com.e_Look.Course.control;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.e_Look.Course.CourseService;
 import com.e_Look.Course.CourseVO;
 import com.e_Look.CourseClassDetails.CourseClassDetailsDAO;
+import com.e_Look.buyCourse.model.BuyCourseService;
 import com.e_Look.courseClass.CourseClassDAO;
 import com.e_Look.courseClass.CourseClassVO;
 import com.e_Look.emailSystem.CourseReviewFailureEmail;
@@ -27,10 +30,57 @@ import net.minidev.json.JSONValue;
  */
 @MultipartConfig(location = "", fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 1024, maxRequestSize = 1024
 		* 1024 * 1024)
-@WebServlet("/com.e_Look.Course.control/CourseEditControlloer")
+@WebServlet(urlPatterns={"/com.e_Look.Course.control/CourseEditControlloer"},loadOnStartup=1)
 public class CourseEditControlloer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	java.util.Timer time = null;	
+	@Override
+	public void init() throws ServletException {
+	System.out.println("募資審核時間器測試");
+	time= new java.util.Timer();
+	time.schedule(new java.util.TimerTask(){
+	BuyCourseService BuyCourseService = new BuyCourseService();
+		@Override
+		public void run() {
+			//System.out.println("成功啟用募資審核計時器");
+			CourseService courseService = new CourseService();
+			 List<CourseVO> AllFundCourse=courseService.getAllFundRaiseCourse();
+			 //第一種取值的方式
+			 for(int i=0;i<AllFundCourse.size();i++){
+				System.out.println("募資起始時間："+AllFundCourse.get(i).getFundEndDate());
+				 long FundEndTime=AllFundCourse.get(i).getFundEndDate().getTime();
+				 long currentDate = System.currentTimeMillis();
+				if(FundEndTime<=currentDate){
+					
+					if(BuyCourseService.getBuyCourseNumber(AllFundCourse.get(i).getCourseID())>=AllFundCourse.get(i).getTargetStudentNumber()){
+						CourseVO  courseVO =  new CourseVO();
+						courseVO.setStatus(4);
+						courseVO.setCourseID(AllFundCourse.get(i).getCourseID());
+						courseService.updateStatus(courseVO);
+						System.out.println("課程募資時間已到，改為備課中的狀態");
+					}else{
+						CourseVO  courseVO =  new CourseVO();
+						courseVO.setStatus(5);
+						courseVO.setCourseID(AllFundCourse.get(i).getCourseID());
+						courseService.updateStatus(courseVO);
+						System.out.println("課程募資時間已到，募資失敗的狀態");
+					}
+				}else{
+					System.out.println("募資尚未結束，不做任何動作");
+				}
+				}
+			 //第二種取值的方式
+//			for(CourseVO CourseVO:AllFundCourse){
+//				System.out.println("募資起始時間："+CourseVO.getFundEndDate());
+//			}
+			//第三種取值的方式
+//			Iterator<CourseVO> it = AllFundCourse.iterator();
+//			while(it.hasNext()){
+//				System.out.println(it.next().getFundEndDate());
+//			}
+		}}, new java.util.Date(), 1000*10);
+	
+	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
