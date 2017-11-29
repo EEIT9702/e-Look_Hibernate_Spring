@@ -57,13 +57,13 @@ public class CourseEditControlloer extends HttpServlet {
 						courseVO.setStatus(4);
 						courseVO.setCourseID(AllFundCourse.get(i).getCourseID());
 						courseService.updateStatus(courseVO);
-						System.out.println("課程募資時間已到，改為備課中的狀態");
+						//System.out.println("課程募資時間已到，改為備課中的狀態");
 					}else{
 						CourseVO  courseVO =  new CourseVO();
 						courseVO.setStatus(5);
 						courseVO.setCourseID(AllFundCourse.get(i).getCourseID());
 						courseService.updateStatus(courseVO);
-						System.out.println("課程募資時間已到，募資失敗的狀態");
+						//System.out.println("課程募資時間已到，募資失敗的狀態");
 					}
 				}else{
 					System.out.println("募資尚未結束，不做任何動作");
