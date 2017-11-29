@@ -114,5 +114,24 @@ public class MemberService {
 		}
 		
 	}
+	public void updateMemberCount(Integer memberID) {
+		MemberVO memberVO1= new MemberVO();
+		MemberVO mebVO = dao.findByPrimaryKey(memberID);
+		Integer countsum = mebVO.getCount();
+		countsum += 1;
+		if(countsum == 3){
+			memberVO1.setMemberID(memberID);
+			memberVO1.setCount(countsum);
+			dao.update(memberVO1, "count");
+			
+			memberVO1.setMemberID(memberID);
+			memberVO1.setStatus((byte) 2);
+			dao.update(memberVO1, "status");
+		}else{
+			memberVO1.setMemberID(memberID);
+			memberVO1.setCount(countsum);
+			dao.update(memberVO1, "count");
+		}
+	}
 	
 }

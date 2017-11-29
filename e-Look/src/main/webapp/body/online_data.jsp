@@ -58,7 +58,10 @@ small, .small {
 				</figure>
 				<div class="card-text">
 					<a style="text-decoration: none; color: black"; href="<%=request.getContextPath() %>/onlineCourse-v2.jsp?CourseID=${onlineCourse.courseVO.courseID}">
-						<p id="title" class="card-title mt-3 multi_ellipsis">${onlineCourse.courseVO.courseName}</p>
+						<p id="title" class="card-title mt-3 multi_ellipsis">
+									<fmt:setLocale value="zh-TW" />
+						<fmt:formatNumber value="${onlineCourse.courseVO.soldPrice}" type="currency" maxFractionDigits="0"/>
+						</p>
 					</a>
 				</div>
 				<div>

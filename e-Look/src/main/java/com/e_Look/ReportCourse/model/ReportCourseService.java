@@ -2,6 +2,7 @@ package com.e_Look.ReportCourse.model;
 
 import com.e_Look.Course.CourseDAO;
 import com.e_Look.Course.CourseVO;
+import com.e_Look.member.model.MemberService;
 
 public class ReportCourseService {
 	private ReportCourseDAO_interface dao;
@@ -31,9 +32,14 @@ public class ReportCourseService {
 		rcVO.setStatus((byte) 1);
 		dao.update(rcVO);
 		
+		Integer memberID = rcVO.getCourseVO().getMemberID();
+		
 		CourseVO cVO = rcVO.getCourseVO();
 		cVO.setStatus(status);
 		cdao.updateStatus(cVO);
+		
+		MemberService mbServ = new MemberService();
+		mbServ.updateMemberCount(memberID);
 	}
 	
 	public void jugeCourse(Integer reportID,int status)	{

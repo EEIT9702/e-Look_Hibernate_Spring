@@ -2,6 +2,7 @@ package com.e_Look.reportMessage.model;
 
 import java.util.List;
 
+import com.e_Look.member.model.MemberService;
 import com.e_Look.message.model.MessageDAO;
 import com.e_Look.message.model.MessageVO;
 
@@ -37,11 +38,16 @@ public class ReportMessageService {
 		rmVO.setStatus((byte) 1);
 		dao.update(rmVO);
 		
+		Integer memberID = rmVO.getMessageVO().getMemberID();
+		
 		MessageVO mVO = rmVO.getMessageVO();		
 		//將傳進來的status訊息狀態設定進去Message裡
 		mVO.setStatus((byte)status);
 		//DAO裡有判斷式,使用符合status的update
 		mdao.update(mVO, "status");
+		
+		MemberService mbServ = new MemberService();
+		mbServ.updateMemberCount(memberID);
 	}
 	
 	public void jugeMessage(Integer reportID,int status) {
